@@ -1,0 +1,87 @@
+1. What is the Sliding Window Technique?
+    The sliding window is a method to reduce time complexity when dealing with subarrays or substrings of a given size or with certain conditions.
+
+    👉 Instead of recalculating things again and again for each subarray,
+    we slide a window (a range) across the data and update the result efficiently.
+
+2. Real-life example
+
+    Imagine you are reading a line of text through a small window on your screen.
+    When you slide it one character to the right, you:
+    Remove the first character (left side)
+    Add the next character (right side)
+    You don’t re-read everything — you just update what’s new and what’s gone.
+    That’s exactly how the sliding window works in algorithms.
+
+Basic Idea
+
+    Imagine a window of fixed size k that moves (slides) across the array:
+    First, calculate something (like sum, max, etc.) for the first window.
+    Then, instead of recalculating for the next window from scratch,
+    subtract the element that goes out and add the new element that comes in.
+
+3. Types of Sliding Window
+Type	                Description	                                                    Example
+Fixed-size window	    The window size is constant.	                                Find max sum of any subarray of size k.
+Variable-size window	The window size changes depending on the condition.	            Find smallest subarray with sum ≥ target.
+
+4. Fixed-size Window — Core Logic
+    Goal: e.g., Find the maximum sum of any subarray of size k.
+    Brute Force (O(n × k))
+    Sum every subarray of size k separately.
+    Sliding Window (O(n))
+    Compute sum of the first k elements.
+    Then, for each next element:
+    Subtract the first element of the old window.
+    Add the new element entering the window.
+
+    Example:
+    arr = [2, 1, 5, 1, 3, 2], k = 3
+    Step 1:
+    Initial sum = 2 + 1 + 5 = 8
+    Max sum = 8
+
+    Step 2:
+    Slide → remove 2, add 1 → sum = 8 - 2 + 1 = 7
+
+    Step 3:
+    Slide → remove 1, add 3 → sum = 7 - 1 + 3 = 9
+
+    Step 4:
+    Slide → remove 5, add 2 → sum = 9 - 5 + 2 = 6
+
+    ✅ Final answer: 9
+
+6. Variable-size Window — Core Logic
+
+Steps:
+    Use two pointers start and end.
+    Expand the window by moving end forward until the sum ≥ target
+    Shrink the window by moving start forward while sum ≥ target (to minimize length).
+    Keep track of the minimum window length.
+
+. Common Problems Solved Using Sliding Window
+    Problem Type	            |            Example
+    Fixed-size window	        |            Max/Min sum of subarray of size k
+    Variable-size window	    |            Longest substring without repeating characters
+    Count patterns	            |            Count anagrams or occurrences of pattern in string
+    Dynamic window	            |            Subarray with product less than k
+
+9. Key Points to Remember
+    Use two pointers (start, end) to represent the window.
+    Expand window → move end right.
+    Shrink window → move start right when condition breaks.
+    Always update result (sum, length, count, etc.) when the condition is met.
+    Time complexity usually becomes O(n) since each element is visited at most twice.
+
+10. Advanced Applications
+    Longest substring without repeating characters (using HashMap)
+    Count of subarrays with given sum (using prefix sum + hashmap)
+    Minimum window substring (Leetcode #76)
+    Distinct elements in every window (using frequency map)
+    Maximum element in each window (using deque)
+
+Use Sliding Window when:
+    You deal with contiguous elements (subarray / substring)
+    You need sum, count, or max/min of continuous parts
+    You want to reduce time from O(n²) → O(n)
