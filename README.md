@@ -140,7 +140,7 @@ Want to contribute and help others learn? Follow these steps:
 
 Fork the repository
 Clone your fork:
-git clone https://github.com/your-username/DSA-with-Cpp.git
+git clone https://github.com/your-username/DSA-with-nikhil.git
 
 Add new solutions or improve existing ones
 Commit and push changes
