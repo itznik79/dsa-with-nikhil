@@ -44,7 +44,6 @@ void inputArray(int arr[], int n) {
     }
 }
 
-// ✅ Function to find duplicate element
 int findDuplicate(int arr[], int n) {
     // Compare each pair of elements
     for (int i = 0; i < n; i++) {
@@ -57,7 +56,6 @@ int findDuplicate(int arr[], int n) {
     return -1; // no duplicate found
 }
 
-// ✅ Function to display result
 void displayResult(int duplicate) {
     if (duplicate == -1)
         cout << "No duplicate found." << endl;
@@ -67,27 +65,17 @@ void displayResult(int duplicate) {
 
 int main() {
     int n;
-
-    // ✅ Input: number of elements
     cout << "Enter number of elements: ";
     cin >> n;
-
-    // ✅ Input validation
     if (n <= 1) {
         cout << "Array must have at least 2 elements to find duplicates." << endl;
         return 1;
     }
 
     int arr[n];
-
-    // ✅ Step 1: Take array input
     inputArray(arr, n);
-
-    // ✅ Step 2: Find duplicate
     int duplicate = findDuplicate(arr, n);
-
-    // ✅ Step 3: Display result
     displayResult(duplicate);
 
-    return 0; // ✅ Successful program termination
+    return 0;
 }
