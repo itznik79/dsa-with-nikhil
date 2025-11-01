@@ -1,0 +1,300 @@
+# 🧠 JavaScript Interview Questions (Basic to Advanced)
+
+---
+
+## 1. Difference between `var`, `let`, and `const`
+**var**
+- Function scoped  
+- Can be reassigned and redeclared  
+- Hoisted and initialized as `undefined`
+
+**let**
+- Block scoped  
+- Can be reassigned but **not redeclared**  
+- Hoisted but in **TDZ (Temporal Dead Zone)**
+
+**const**
+- Block scoped  
+- Neither reassigned nor redeclared  
+- Hoisted but in **TDZ**
+
+---
+
+## 2. Difference between `==` and `===`
+- `==` → Checks **value only**, performs **type conversion**  
+- `===` → Checks **value + type**, no type conversion
+
+---
+
+## 3. What is Temporal Dead Zone (TDZ)?
+The period between variable **hoisting and initialization** where the variable cannot be accessed.
+
+---
+
+## 4. What is a Closure?
+A closure is created when a function remembers and can access variables from its lexical scope, even after that function executes outside its original scope.
+
+---
+
+## 5. What is Currying?
+Currying transforms a function with multiple arguments into a sequence of functions, each taking a single argument.
+
+---
+
+## 6. What is Lexical Scope?
+Lexical scope means a function’s scope is determined by **where it’s defined** in the source code — inner functions can access variables from their outer scope.
+
+---
+
+## 7. What is Hoisting?
+Hoisting means variable and function declarations are moved to the top of their scope before execution.  
+Only declarations are hoisted, **not initializations**.
+
+---
+
+## 8. Primitive vs Reference Data Types
+**Primitive (stored by value):**  
+`String`, `Number`, `Boolean`, `Undefined`, `Null`, `Symbol`, `BigInt`
+
+**Reference (stored by reference):**  
+`Object`, `Array`, `Function`
+
+---
+
+## 9. Function Declaration vs Expression
+- **Declaration:** Hoisted (can be called before definition)
+- **Expression:** Not hoisted (assigned to variable)
+
+---
+
+## 10. Arrow Function
+Arrow functions are shorter and **don’t have their own `this`, `arguments`, or `prototype`.**
+
+---
+
+## 11. Callback Function
+A function passed as an argument to another function, executed after some operation completes.
+
+---
+
+## 12. IIFE (Immediately Invoked Function Expression)
+Executes immediately after definition, creating a private scope and avoiding global conflicts.
+
+---
+
+## 13. Higher Order Function (HOF)
+A function that **takes another function as an argument**, **returns a function**, or **does both**.
+
+---
+
+## 14. Shallow Copy vs Deep Copy
+- **Shallow Copy:** Copies reference for nested objects  
+- **Deep Copy:** Creates a completely independent copy
+
+---
+
+## 15. Event Bubbling & Capturing
+- **Bubbling:** Event flows from **child → parent** (default)  
+- **Capturing:** Event flows from **parent → child**
+
+---
+
+## 16. What is a Promise?
+A Promise represents the **eventual completion (or failure)** of an async operation.  
+**States:** `pending` → `fulfilled` → `rejected`
+
+---
+
+## 17. Why Promises?
+To avoid **callback hell** and handle async operations cleanly.
+
+---
+
+## 18. `Promise.all()`
+Waits for **all promises** to complete or rejects if **any** fail.
+
+---
+
+## 19. Async/Await
+Simplifies asynchronous code by making it look synchronous.  
+`async` declares a function returning a Promise;  
+`await` pauses execution until the Promise resolves or rejects.
+
+---
+
+## 20. Event Loop
+JavaScript’s mechanism for handling async tasks.  
+It checks the **Call Stack** and **Task/Microtask Queues**:  
+- **Microtasks:** Promises, MutationObservers  
+- **Tasks:** `setTimeout`, `setInterval`, `fetch` callbacks  
+
+---
+
+## 21. Prototype & Prototypal Inheritance
+Every object has a hidden `[[Prototype]]` referring to another object.  
+This allows **property/method sharing** between instances via a **prototype chain**.
+
+---
+
+## 22. Constructor & `new` Keyword
+A constructor function creates multiple similar objects.  
+Using `new`:
+1. Creates new object  
+2. Sets prototype  
+3. Executes constructor code  
+4. Returns new object
+
+---
+
+## 23. Debouncing
+Executes a function **after a delay** since the last event trigger — useful for input or resize events.
+
+---
+
+## 24. Throttling
+Executes a function **at regular intervals**, ignoring extra calls — useful for scroll/resize events.  
+**Debounce → waits until calm**, **Throttle → steady pace**
+
+---
+
+## 25. Prototype Inheritance
+Objects inherit properties from other objects via the **prototype chain** using constructors, `Object.create()`, or ES6 `class`.
+
+---
+
+## 26. Pure vs Impure Functions
+- **Pure:** No side effects, same output for same input  
+- **Impure:** Side effects or depends on external data
+
+---
+
+## 27. Event Delegation
+Attach a single event listener to a **parent element** to handle events on its **child elements**.
+
+---
+
+## 28. Modules in JS
+Modules are reusable blocks of code that **export/import** variables, functions, or classes (ES6 `import`/`export` syntax).
+
+---
+
+## 29. Generators
+Special functions that can be **paused and resumed**, allowing control over data flow using `function*` and `yield`.
+
+---
+
+## 30. Call, Apply, and Bind
+All set the value of `this` manually.  
+- **call():** Invoke immediately with individual args  
+- **apply():** Invoke immediately with args as array  
+- **bind():** Returns new function with bound `this`
+
+---
+
+## 31. DOM (Document Object Model)
+Tree-like structure representing HTML as JS objects, enabling dynamic manipulation of elements, attributes, and content.
+
+---
+
+## 32. Cookies vs localStorage vs sessionStorage
+- **Cookies:** Small data, sent with every request  
+- **localStorage:** Large, persistent, no expiry  
+- **sessionStorage:** Temporary, cleared on tab close  
+
+---
+
+## 33. Common Causes of Memory Leaks
+- Global variables not cleaned up  
+- Forgotten timers/listeners  
+- Detached DOM nodes  
+- Closures holding large data
+
+---
+
+## 34. Execution Context
+Environment where JS code executes.  
+Types:
+- **GEC (Global Execution Context)**
+- **FEC (Function Execution Context)**
+- **Eval Execution Context**
+
+Each has:
+- Variable Environment  
+- Lexical Environment  
+- `this` Binding  
+
+---
+
+## 35. Call Stack
+A LIFO stack that keeps track of execution contexts.  
+The last called function is the first to finish.
+
+---
+
+## 36. Memory Management
+JS uses **Garbage Collection**.  
+Memory is freed when objects are no longer reachable.
+
+---
+
+## 37. Global Execution Context (GEC)
+Created when JS starts.
+### Phases:
+1. **Memory Creation (Hoisting):**
+   - `var` → undefined  
+   - `function` → full definition stored  
+   - Creates `global object` (`window`/`global`)  
+   - `this` → global object
+2. **Execution Phase:**
+   - Runs code line by line  
+   - Function calls create new **FECs**
+
+---
+
+## 38. `this` Keyword
+Refers to the **object that owns or calls the function**.
+
+| Context | `this` Refers To |
+|----------|------------------|
+| Global (non-strict) | `window` / `global` |
+| Method | The calling object |
+| Function (strict) | `undefined` |
+| Arrow Function | Lexical parent’s `this` |
+| Event Handler | The DOM element |
+
+---
+
+## 39. Function Composition
+Combining multiple functions into one:  
+`(f ∘ g)(x) = f(g(x))`
+
+---
+
+## 40. Template Literals
+Strings enclosed in backticks `` ` `` allowing **multiline** and **embedded expressions**.
+
+---
+
+## 41. Set & Map
+- **Map:** Key–value pairs, keys of any type  
+- **Set:** Collection of **unique** values
+
+---
+
+## 42. Accessing Object Properties
+- **Dot notation:** `obj.a`  
+- **Bracket notation:** `obj['a']`
+
+---
+
+## 43. Array Methods
+- **forEach()** → Looping (no return)  
+- **filter()** → Filter elements  
+- **map()** → Transform array  
+- **reduce()** → Accumulate result  
+
+---
+
+## 44. Check if Object is an Array
+```js
+Array.isArray(obj)
